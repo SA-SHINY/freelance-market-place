@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #FFF6EF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #FFF6EF;
+  color: #241712;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-bg {
+  background-color: #FFEFE3;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: #FF9D68;
+  color: #241712;
+}
+
+:focus-visible {
+  outline: 2px solid #F2814A;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.font-display { font-family: 'Fraunces', serif; }
+.tabular {
+  font-family: 'IBM Plex Mono', monospace;
+  font-feature-settings: "tnum";
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 4px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(36,23,18,0.15); border-radius: 2px; }
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink-900 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-ink-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply border border-ink-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors disabled:opacity-40;
+    background: transparent;
+    color: #604536;
+  }
+  .btn-secondary:hover { background: #FFE8DC; color: #241712; }
+  .btn-accent {
+    @apply bg-peach-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-peach-600 transition-colors disabled:opacity-40;
+  }
+
+  .input-field {
+    @apply w-full px-3.5 py-2.5 rounded-xl text-sm outline-none transition-all;
+    background: #FFFFFF;
+    border: 1px solid #E2CFC0;
+    color: #241712;
+  }
+  .input-field::placeholder { color: #9A7B65; }
+  .input-field:focus { background: #FFFFFF; border-color: #F2814A; }
+
+  .card {
+    @apply rounded-2xl;
+    background: #FFFFFF;
+    border: 1px solid #F2E5DA;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+}
