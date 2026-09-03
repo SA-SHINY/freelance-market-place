@@ -301,5 +301,3 @@ Use these in the Razorpay payment popup during testing:
 - Razorpay Route transfers require the freelancer's linked account to be verified with Razorpay KYC
 
 ---
-
- 
